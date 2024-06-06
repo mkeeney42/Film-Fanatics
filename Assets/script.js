@@ -15,14 +15,10 @@ fetch(
     console.log(data)
     
 })
+}})
 
-
-}
-
-
-searchButton.addEventListener("click", function(event){
+searchButton.addEventListener("click", function(event) {
 event.preventDefault()
 const movie = document.querySelector("#input-box").value
 searchMovie(movie)
-
 })
