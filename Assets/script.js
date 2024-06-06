@@ -1,6 +1,8 @@
-const apiKey = "d254f211"
+const apiKey = "d254f211";  
+const searchButton = document.querySelector(".btn"); 
 
-const searchButton = document.querySelector(".btn")
+searchButton.addEventListener("click", () => {
+  console.log("Search button clicked!");
 
 function searchMovie(movie){
 fetch(
