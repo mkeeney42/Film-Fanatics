@@ -15,10 +15,7 @@ searchButton.addEventListener("click", () => {
             console.log(data)
 
         })
-
-
     }
-
 
     searchButton.addEventListener("click", function (event) {
         event.preventDefault()
