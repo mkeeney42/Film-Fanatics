@@ -5,10 +5,8 @@ searchButton.addEventListener("click", () => {
     console.log("Search button clicked!");
 
     function searchMovie(movie) {
-        fetch(
-
-            `http://www.omdbapi.com/?s=${movie}&apikey=651c5a7f`
-        ).then(function (response) {
+        fetch(`http://www.omdbapi.com/?s=${movie}&apikey=651c5a7f`)
+        .then(function (response) {
             return response.json();
         }).then(function (data) {
 
