@@ -19,6 +19,13 @@ renderResult(data.Search[i])
 
 }
 
+const render = document.querySelector(".movie-area")
+render.addEventListener("click", function(event){
+event.preventDefault()
+
+
+})
+
 
 searchButton.addEventListener("click", function(event){
 event.preventDefault()
@@ -57,6 +64,7 @@ searchMovie(movie)
     <div>
     <h3>Title: ${movie.Title}</h3>
     <p>Year: ${movie.Year}</p>
+    <button class= "details" data-movieID = "${movie.imbdID}"> Click Here </button>
     <div><img src =" ${movie.Poster}"/></div>
     </div>
     
@@ -71,5 +79,13 @@ searchMovie(movie)
 
     displaySearchHistory();
   
+function getWhereStream(movieId) {
+    fetch ( 
 
+        `https://api.watchmode.com/v1/title/${movieId}/details/?apiKey=YOUR_API_KEY&append_to_response=sources`
+        
+            )
+        
+}
+ 
 
