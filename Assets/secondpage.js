@@ -12,11 +12,11 @@ function getMovieDetails(movieID) {
            let movieDetails = 
            `
                 <h2>${data.title}</h2>
-                <p><strong>Plot:</strong> ${data.plot}</p>
+                <p><strong>Plot:</strong> ${data.plot_overview}</p>
             
 
                 <p><strong>Sources:</strong><ul>`
-               for (let i = 0; i< data.sources.length; i++){
+               for (let i = 0; i< data.sources.length && i < 5; i++){
                 movieDetails += `<li>${data.sources[i].name}</li>`
 
 
