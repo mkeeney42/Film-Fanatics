@@ -29,3 +29,10 @@ function getMovieDetails(movieID) {
             console.error('Error fetching movie details:', error);
         });
 }
+// Home Button
+const homeButtons = document.getElementsByClassName('homeBtn');
+for (let i = 0; i < homeButtons.length; i++) {
+    homeButtons[i].addEventListener('click', function() {
+        window.location.href = 'index.html'; 
+    });
+}

@@ -4,3 +4,34 @@ body{
     box-sizing: border-box;
 
 }
+
+.search-history-item {
+    cursor: pointer; 
+    padding: 8px; 
+  }
+  
+  .search-history-item.selected {
+    background-color: #f0f0f0; 
+  }
+  .search-history-item:hover {
+    width: 120px;
+    padding: 6px;
+    margin: 0;
+    background-color: rgba(89, 89, 89, 0.311);
+  }
+
+.search-input {
+    padding: 10px; 
+    border: 1px solid #000000; 
+    border-radius: 5px; 
+    min-width: 100px;
+    max-width: 300px; 
+    width: auto;
+    margin-bottom: 20px; 
+}
+
+.search-input::placeholder {
+    color: #ffffff; 
+}
+
+

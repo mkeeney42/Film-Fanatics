@@ -58,9 +58,33 @@ function displaySearchHistory() {
     let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
     searchHistoryContainer.innerHTML = '<h2>Search History:</h2>';
-    searchHistoryContainer.innerHTML += '<ul>' + searchHistory.map(movie => `<li>${movie}</li>`).join('') + '</ul>';
+    const searchHistoryList = document.createElement('ul');
 
+    searchHistory.forEach(movie => {
+        const searchHistoryItem = document.createElement('li');
+        searchHistoryItem.textContent = movie;
+        searchHistoryItem.classList.add('search-history-item');
+        searchHistoryItem.addEventListener('click', function() {
+           
+            document.querySelectorAll('.search-history-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+           
+            this.classList.add('selected');
+            
+            const clickedMovie = this.textContent;
+            document.querySelector("#input-box").value = clickedMovie; 
+            searchMovie(clickedMovie);
+        });
+        searchHistoryList.appendChild(searchHistoryItem);
+    });
+    
+
+    searchHistoryContainer.appendChild(searchHistoryList);
 }
+
+
+
 function renderResult(movie) {
     const result = document.createElement("div");
     const todaysMovie = `
@@ -76,6 +100,7 @@ function renderResult(movie) {
     const render = document.querySelector(".movie-area");
     render.append(result);
 }
+
 
 
 displaySearchHistory();
