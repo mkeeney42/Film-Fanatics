@@ -6,14 +6,19 @@
     <link rel="stylesheet" href="./assets/style.css">
     <script src="https://cdn.tailwindcss.com"></script> 
     <title>Film Fanatics</title>
+    
 </head>
-<body id="film-starter" >
+<body class="centered-content"
+    style ="background-image: url('./Assets/stars.jpg'); color: white;
+    background-size: cover;
+    background-position: center">
     <main class="landing-page">
-        <header><h1 class="">Film Fanatics - A movie resource page.</h1></header>
-<form class="search-input">
-<input type="text" id="input-box" placeholder="Search movie">
+        <header><h1  class="flex justify-center text-7xl font-bold mt-5 mb-5">Film Fanatics - A movie resource page.</h1></header>
+<form class="search-input flex justify-center">
+<input class="w-72 h-12 px-4 py-2 border-2 border-gray-300 rounded-full text-lg placeholder-gray-500 focus:outline-none focus:border-blue-500"
+ type="text" id="input-box" placeholder="Search movie">
 <br>
-<button class="btn">Search NOW!</button>
+<button class="btn button-search bg-blue-500 text-white px-4 py-2 rounded-full mt-4 hover:bg-blue-600 focus:outline-none">Search NOW!</button>
 
 </form>
 
