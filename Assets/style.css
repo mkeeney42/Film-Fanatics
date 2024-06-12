@@ -2,5 +2,25 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: black;
 
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+#input-box{
+    margin: 8px;
+    padding: 5px;
+    width: 15%;
+}
+button.btn {
+    margin: 8px;
+    color: green;
+    width: 15%;
+}
+h2 {
+    color: white;
 }
