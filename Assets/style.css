@@ -2,25 +2,32 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: black;
 
 }
-h1 {
+ 
+.button-search {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
     display: flex;
-    justify-content: center;
-    color: white;
-}
+    flex-direction: column;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 10rem;
+  }
+  
+  .button-search:hover {
+    background-color: #45a049; 
+  }
 
-#input-box{
-    margin: 8px;
-    padding: 5px;
-    width: 15%;
-}
-button.btn {
-    margin: 8px;
-    color: green;
-    width: 15%;
-}
-h2 {
-    color: white;
+  .movie-area {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1rem; 
+    justify-content: center;
 }
