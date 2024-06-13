@@ -54,34 +54,40 @@ function updateSearchHistory(movie) {
 }
 
 
+searchButton.addEventListener("click", function (event) {
+    event.preventDefault()
+    const movie = document.querySelector("#input-box").value
+    updateSearchHistory(movie)
+    searchMovie(movie)
+
+})
+
+searchBox.addEventListener("click", function (event) {
+    event.preventDefault()
+    displaySearchHistory()
+})
+
+function updateSearchHistory(movie) {
+
+    let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+
+    searchHistory.push(movie);
+
+
+    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+
+
+    displaySearchHistory();
+}
+
 function displaySearchHistory() {
     const searchHistoryContainer = document.getElementById('search-history');
     let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
-    searchHistoryContainer.innerHTML = '<h2 class="flex justify-start text-3xl font-bold mt-5 mb-5">Search History:</h2>';
-    const searchHistoryList = document.createElement('ul');
+    searchHistoryContainer.innerHTML = '<h2>Search History:</h2>';
+    searchHistoryContainer.innerHTML += '<ul>' + searchHistory.map(movie => `<li>${movie}</li>`).join('') + '</ul>';
 
-    searchHistory.forEach(movie => {
-        const searchHistoryItem = document.createElement('li');
-        searchHistoryItem.textContent = movie;
-        searchHistoryItem.classList.add('search-history-item', 'button-search', 'bg-blue-500', 'text-white', 'px-4', 'py-2', 'rounded-full', 'cursor-pointer', 'hover:bg-blue-600', 'focus:outline-none', 'transition', 'duration-200', 'ease-in-out');
-        
-        searchHistoryItem.addEventListener('click', function() {
-            document.querySelectorAll('.search-history-item').forEach(item => {
-                item.classList.remove('selected');
-            });
-           
-            this.classList.add('selected');
-            
-            const clickedMovie = this.textContent;
-            document.querySelector("#input-box").value = clickedMovie; 
-            searchMovie(clickedMovie);
-        });
-        searchHistoryList.appendChild(searchHistoryItem);
-    });
-    
-
-    searchHistoryContainer.appendChild(searchHistoryList);
 }
 
 function renderResult(movie) {
@@ -89,14 +95,16 @@ function renderResult(movie) {
     result.classList.add("m-2", "p-2", "border", "border-gray-200", "rounded", "shadow-md", "w-full", "sm:w-1/2", "md:w-1/3", "lg:w-1/3", "xl:w-1/3", "mt-10");
 
     const todaysMovie = `
-        <div>
-            <h3 class="text-lg font-bold mb-1">Title: ${movie.Title}</h3>
-            <p class="mb-1">Year: ${movie.Year}</p>
-            <a href="./second_page.html?movieID=${movie.imdbID}">
-                <img class="w-full h-64 object-cover" src="${movie.Poster}" alt="${movie.Title} Poster"/>
-            </a>
-        </div>
-    `;
+    <div class="flex flex-col justify-between h-full">
+    <div>
+        <h3 class="text-lg font-bold mb-1">Title: ${movie.Title}</h3>
+        <p class="mb-1">Year: ${movie.Year}</p>
+    </div>
+    <a href="./second_page.html?movieID=${movie.imdbID}">
+        <img class="w-full h-auto object-cover" src="${movie.Poster}" alt="${movie.Title} Poster"/>
+    </a>
+</div>
+`;
     result.innerHTML = todaysMovie;
     const render = document.querySelector(".movie-area");
     render.append(result);
