@@ -1,5 +1,5 @@
 const apiKey = "d254f211"
-const apiKey2 = "s7V7ouDr0KAENqnahUeSndhy5at0c5ITRnzhjkaa"
+const apiKey2 = "61ZaYm74PaS6elBnC2r6ERuhtxBJPEmrfABMH80"
   
     const searchButton = document.querySelector(".btn");
     const searchBox = document.querySelector(".search-box");
