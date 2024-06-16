@@ -31,3 +31,8 @@ body{
     gap: 1rem; 
     justify-content: center;
 }
+.error-message {
+  font-size: 40px;
+  padding: 15px;
+  color: red; 
+}

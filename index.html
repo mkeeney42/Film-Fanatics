@@ -8,17 +8,17 @@
     <title>Film Fanatics</title>
     
 </head>
-<body class="centered-content bg-cover bg-center bg-fixed"
-    style ="background-image: url('./Assets/stars.jpg'); color: white;
+<body class="centered-content bg-cover bg-center bg-fixed "
+    style ="background-image: url('./Assets/stars.jpg'); color: white; 
     background-size: cover;
     background-position: center">
     <main class="landing-page text-center">
         <h1 class="text-7xl font-bold text-white-800">
-            <span style="color: purple;">Film Fanatics</span> - A movie resource page.
+            <span style="color: purple;">Film Fanatics</span> -A movie resource page.
         </h1>
         <form class="search-input flex justify-center">
             <div class="relative w-full max-w-lg">
-                <input type="text" id="input-box" placeholder="Search movie" aria-label="Search movie" class="search-box w-full py-3 pl-10 pr-4 text-lg border rounded-full shadow focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <input type="text" id="input-box" placeholder="Search movie" aria-label="Search movie" class="search-box w-full text-black py-3 pl-10 pr-4 text-lg border rounded-full shadow focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                 <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m2.3-5.65a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z" />
                 </svg>
@@ -26,8 +26,8 @@
             <button type="submit" class="btn ml-4 px-12 py-3 text-lg font-semibold text-white bg-purple-500 rounded-full shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Search NOW!</button>
         </form>
 
-
-        <section class="movie-area grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 mt-8 justify-center items-center"></section>
+        <div class="error-message"></div>
+        <section class="movie-area"></section>
 
 
 <div id="search-history" class="mt-8"></div>

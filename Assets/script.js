@@ -1,9 +1,8 @@
 const apiKey = "d254f211"
-const apiKey2 = "s7V7ouDr0KAENqnahUeSndhy5at0c5ITRnzhjkaa"
-
-
+const apiKey2 = "61ZaYm74PaS6elBnC2r6ERuhtxBJPEmrfABMH80Z"
+const errorBox = document.querySelector(".error-message")
 const searchButton = document.querySelector(".btn")
-
+const searchBox = document.querySelector(".search-box")
 
 function navigateToSecondPage(movieID) {
     const secondPageLink = document.getElementById('second-page-link');
@@ -20,39 +19,24 @@ function searchMovie(movie) {
     }).then(function (data) {
 
         console.log(data)
+            
+        if (data.Response === "False") {
+            errorBox.textContent = `Spelling Error.`
+            setTimeout(() => {
+                errorBox.textContent = '';
+            }, 5000);
+          }
+
         for (let i = 0; i < data.Search.length; i++) {
             renderResult(data.Search[i])
         }
+    })
+    .catch(function (error) {
+        
     });
-
-
 }
 
 const render = document.querySelector(".movie-area")
-
-
-searchButton.addEventListener("click", function (event) {
-    event.preventDefault()
-    const movie = document.querySelector("#input-box").value
-    updateSearchHistory(movie)
-    searchMovie(movie)
-
-})
-
-function updateSearchHistory(movie) {
-
-    let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
-
-
-    searchHistory.push(movie);
-
-
-    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
-
-
-    displaySearchHistory();
-}
-
 
 searchButton.addEventListener("click", function (event) {
     event.preventDefault()
@@ -97,8 +81,8 @@ function renderResult(movie) {
     const todaysMovie = `
     <div class="flex flex-col justify-between h-full">
     <div>
-        <h3 class="text-lg font-bold mb-1">Title: ${movie.Title}</h3>
-        <p class="mb-1">Year: ${movie.Year}</p>
+        <h3 class="text-2xl font-bold mb-1 text-white">Title: ${movie.Title}</h3>
+        <p class="text-lg mb-1 font-bold text-white">Year: ${movie.Year}</p>
     </div>
     <a href="./second_page.html?movieID=${movie.imdbID}">
         <img class="w-full h-auto object-cover" src="${movie.Poster}" alt="${movie.Title} Poster"/>
@@ -108,6 +92,7 @@ function renderResult(movie) {
     result.innerHTML = todaysMovie;
     const render = document.querySelector(".movie-area");
     render.append(result);
+
 }
 
 displaySearchHistory();
