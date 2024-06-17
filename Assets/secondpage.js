@@ -9,7 +9,7 @@ if (movieID != null) {
 }
 
 function getMovieDetails(movieID) {
-    return fetch(`https://api.watchmode.com/v1/title/${movieID}/details/?apiKey=61ZaYm74PaS6elBnC2r6ERuhtxBJPEmrfABMH80Z&append_to_response=plot,sources`)
+    return fetch(`https://api.watchmode.com/v1/title/${movieID}/details/?apiKey=QsSJXqjQpyQSrHBAtiPdCan21Ntsj3JgY8fN7czI&append_to_response=plot,sources`)
         .then(response => response.json())
         .then(data => {
             const movieDetailsElement = document.getElementById('movie-details');
