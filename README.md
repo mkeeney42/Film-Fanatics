@@ -26,6 +26,8 @@ Website providing a database for movie plots and streaming options.
 
 ## Usage
 Please navigate to the site via this link : (http://127.0.0.1:5500/index.html)
+![See First Page Screenshot](First_Page_Screenshot.png)
+![See Second Page Screenshot](Second_Page_Screenshot.png)
 
 Navigate through the page to learn more about any given movie by searching for the title and clicking on the promo poster.
 
