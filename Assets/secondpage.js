@@ -15,24 +15,24 @@ function getMovieDetails(movieID) {
             const movieDetailsElement = document.getElementById('movie-details');
             let movieDetails =
            `
-           <h2 class="flex justify-center text-5xl font-bold mt-5 mb-5">
+           <h2 class="flex justify-center text-7xl font-bold mt-5 mb-5">
            ${data.title}
        </h2>
 
        <p>
-           <div class="text-2xl ml-10 mr-10 mt-12 mb-2">
-               <strong style="color: #38bdf8;">Plot:</strong> ${data.plot_overview}
-           </div>
-       </p>
+       <div class="text-3xl ml-10 mr-10 mt-12 mb-2">
+           <strong style="color: #38bdf8;">Plot:</strong> ${data.plot_overview}
+       </div>
+   </p>
 
        <p>
-                <div class="text-2xl ml-10 mr-10 mt-12 mb-2">
+                <div class="text-3xl ml-10 mr-10 mt-12 mb-2">
                     <strong style="color: #38bdf8;">Sources:</strong>
                     <ul>`
                 for (let i = 0; (i < data.sources.length && i < max_items); i++) {
                     movieDetails += 
                     `<a href="${data.sources[i].web_url}">
-                    <li class="mt-2 mb-2" id="movie-source-${i}">${data.sources[i].name}</li>
+                    <li class="mt-2 mb-2 text-blue-300 underline" id="movie-source-${i}">${data.sources[i].name}</li>
                     </a>`
                 }
             movieDetails +=
