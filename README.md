@@ -47,6 +47,7 @@ Watchmode API (https://api.watchmode.com/)
 tailwindcss (https://tailwindcss.com/)
 W3 (https://www.w3.org/2000/svg)
 BootStrap (https://getbootstrap.com/docs/5.3/layout/breakpoints/)
+Figma (https://www.figma.com/)
 
 
 ## Contact and Acknowledgements
