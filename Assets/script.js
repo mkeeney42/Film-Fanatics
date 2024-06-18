@@ -11,7 +11,7 @@ const apiKey2 = "QsSJXqjQpyQSrHBAtiPdCan21Ntsj3JgY8fN7czI"
     }
 
     function searchMovie(movie) {
-        fetch(`http://www.omdbapi.com/?s=${movie}&apikey=${apiKey}`)
+        fetch(`https://www.omdbapi.com/?s=${movie}&apikey=${apiKey}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
